@@ -1,0 +1,25 @@
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.AssemblyReference.cache
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.SuggestedBindingRedirects.cache
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\MainWindow.g.cs
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\App.g.cs
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program_MarkupCompile.cache
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program_MarkupCompile.lref
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\MainWindow.baml
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.g.resources
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse_Program.Properties.Resources.resources
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.GenerateResource.cache
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.CoreCompileInputs.cache
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.exe
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.pdb
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\bin\Debug\Warehouse Program.exe.config
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\bin\Debug\Warehouse Program.exe
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\bin\Debug\Warehouse Program.pdb
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\bin\Debug\Database\DBKluis11.mdf
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\bin\Debug\Database\DBKluis11_log.ldf
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program_Content.g.cs
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\UpdateWindow.g.cs
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\UpdateWindow.baml
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\IncommingWindow.g.cs
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\IncommingWindow.baml
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Goederen.g.cs
+C:\Users\brroo\Documents\C#_Projects\Warehouse Program\Warehouse Program\obj\Debug\Goederen.baml

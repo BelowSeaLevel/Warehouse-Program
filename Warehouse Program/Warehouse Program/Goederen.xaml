@@ -1,0 +1,42 @@
+﻿<Window x:Class="Warehouse_Program.GoederenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warehouse_Program"
+        mc:Ignorable="d"
+        Title="Uitgaanden Goederen" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinHeight="300" MinWidth="600">
+    <Grid>
+        <Grid Background="#FF88B1BA" Height="107" VerticalAlignment="Top">
+            <Label Content="Goederen Plus/Min" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="87" Width="305" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" FontWeight="Bold" FontFamily="Arial" FontStyle="Normal"/>
+        </Grid>
+        <Grid Margin="0,112,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <RichTextBox x:Name="Scanned_Text" Margin="10,10,104,10" MinWidth="180" TextChanged="RichTextBox_TextChanged" FontSize="18">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Button x:Name="B_min" Grid.Column="1" Content="Min" HorizontalAlignment="Left" Margin="174,161,0,0" VerticalAlignment="Top" Height="45" Width="119" FontSize="24" Click="B_Min_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="B_Plus" Grid.Column="1" Content="Plus" HorizontalAlignment="Left" Margin="174,77,0,0" VerticalAlignment="Top" Height="45" Width="119" FontSize="24" Click="B_Plus_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Window>
