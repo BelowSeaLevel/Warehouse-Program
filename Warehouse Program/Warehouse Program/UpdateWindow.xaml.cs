@@ -38,7 +38,7 @@ namespace Warehouse_Program
             
             foreach (DataRow row in reading.Rows)
             {
-                LBItems.Items.Add(row[1]);   // Default view gets the data in the database.
+                LBItems.Items.Add(row[1]);   // Show the names of the items in the ListBox
             }
             
             
