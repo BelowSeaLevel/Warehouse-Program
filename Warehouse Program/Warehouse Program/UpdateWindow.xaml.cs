@@ -23,7 +23,6 @@ namespace Warehouse_Program
         public UpdateWindow()
         {
             InitializeComponent();
-
         }
 
         private void LBItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -36,7 +35,17 @@ namespace Warehouse_Program
         {
             ShowStock peek = new ShowStock();         // Makes a new ShowStock class.
             DataTable reading = peek.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
-            ListBox.ItemsSource = reading.DefaultView;   // Default view gets the data in the database.
+            
+            foreach (DataRow row in reading.Rows)
+            {
+                LBItems.Items.Add(row);   // Default view gets the data in the database.
+            }
+            
+        }
+
+        private void BT_GetStock_Click(object sender, RoutedEventArgs e)
+        {
+            GetDataBase();
         }
     }
 

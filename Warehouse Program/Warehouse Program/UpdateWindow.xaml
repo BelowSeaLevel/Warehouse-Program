@@ -12,5 +12,6 @@
         </Grid>
         <ListBox x:Name="LBItems" d:ItemsSource="{Binding}" Margin="32,147,577,69" SelectionChanged="LBItems_SelectionChanged" FontSize="18" />
         <Button Content="Oke" Margin="0,147,133,0" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top" FontSize="36"/>
+        <Button x:Name="BT_GetStock" Content="Stock" HorizontalAlignment="Left" Margin="568,256,0,0" VerticalAlignment="Top" Height="50" Width="99" FontSize="36" Click="BT_GetStock_Click"/>
     </Grid>
 </Window>
