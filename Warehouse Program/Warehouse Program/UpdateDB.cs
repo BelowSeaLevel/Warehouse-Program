@@ -13,11 +13,12 @@ namespace Warehouse_Program
 
         /// <summary>
         /// Updates items in the Database.
-        /// This is meant for items already in the database that need a new amount value.
+        /// This is meant for items already in the database that need a new amount value,
+        /// name, or part number.
         /// </summary>
         /// <param name="itemName"></param>
         /// <param name="itemAmount"></param>
-        internal void UpdateDataB(string itemName, int itemAmount)
+        internal void UpdateDataB(string itemName, int itemAmount, string partNumber)
         {
             try
             {
@@ -25,18 +26,17 @@ namespace Warehouse_Program
                 {
                     DataTable dt = new DataTable();
 
-                    var query = $"UPDATE {itemName}, {itemAmount} INTO Stock";
+                    var query = $"UPDATE INTO Stock VALUES (@itemName, @itemAmount, @partNumber)";
 
                     SqlCommand command = new SqlCommand(query, connection);
+
+                    command.Parameters.AddWithValue("@itemName", itemName);
+                    command.Parameters.AddWithValue("@itemAmount", itemAmount);
+                    command.Parameters.AddWithValue("@partNumber", partNumber);
 
                     connection.Open();
 
                     command.ExecuteNonQuery();
-
-                    SqlDataReader dReader = command.ExecuteReader();
-
-                    dt.Load(dReader);
-
 
                     command.Dispose();
 

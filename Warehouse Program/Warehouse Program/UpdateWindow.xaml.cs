@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,26 +24,21 @@ namespace Warehouse_Program
         {
             InitializeComponent();
 
-            List<DBItems> items = new List<DBItems>();
-            items.Add(new DBItems() { name = "UTP 5 meter", amount = 40 });
-            items.Add(new DBItems() { name = "T450", amount = 5 });
-
-
-            foreach(DBItems item in items)
-            {
-                LBItems.Items.Add(item.name);
-            }
         }
 
         private void LBItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
         }
+
+
+        private void GetDataBase()
+        {
+            ShowStock peek = new ShowStock();         // Makes a new ShowStock class.
+            DataTable reading = peek.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
+            ListBox.ItemsSource = reading.DefaultView;   // Default view gets the data in the database.
+        }
     }
 
-    public class DBItems
-    {
-        public string name;
-        public int amount;
-    }
+  
 }
