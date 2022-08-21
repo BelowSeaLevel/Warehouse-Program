@@ -38,8 +38,9 @@ namespace Warehouse_Program
             
             foreach (DataRow row in reading.Rows)
             {
-                LBItems.Items.Add(row);   // Default view gets the data in the database.
+                LBItems.Items.Add(row[1]);   // Default view gets the data in the database.
             }
+            
             
         }
 
