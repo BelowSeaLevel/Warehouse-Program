@@ -20,6 +20,10 @@ namespace Warehouse_Program
     /// </summary>
     public partial class UpdateWindow : Window
     {
+        private string itemNaam;
+        private int itemAantal;
+        private string itemPartnummer;
+
         public UpdateWindow()
         {
             InitializeComponent();
@@ -27,7 +31,8 @@ namespace Warehouse_Program
 
         private void LBItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            UpdateDB updateDB = new UpdateDB();
+            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer);
         }
 
 
@@ -47,6 +52,35 @@ namespace Warehouse_Program
         private void BT_GetStock_Click(object sender, RoutedEventArgs e)
         {
             GetDataBase();
+        }
+
+        private void TB_Naam_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            itemNaam = TB_Naam.Text;
+        }
+
+        private void TB_Aantal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                // With this 'if' statement we make sure, that we won't get 2 Exceptions.
+                // Because that would call the MessageBox twice.
+                if (TB_Aantal.Text != "")
+                {
+                    itemAantal = int.Parse(TB_Aantal.Text);
+                }
+
+            }
+            catch (FormatException)
+            {
+                TB_Aantal.Clear();
+                MessageBox.Show("De 'Aantal' Textbox verwacht een nummer!");
+            }
+        }
+
+        private void TB_PartNummer_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            itemPartnummer = TB_PartNummer.Text;
         }
     }
 

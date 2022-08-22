@@ -47,7 +47,7 @@ namespace Warehouse_Program
             catch (FormatException)
             {
                 Amount_Textbox.Clear();
-                MessageBox.Show("The 'Amount' textbox needs a number as input!");
+                MessageBox.Show("De 'Aantal' Textbox verwacht een nummer!");
             }
 
         }
@@ -64,7 +64,7 @@ namespace Warehouse_Program
             try
             {
                 insert.InsertItemsDB(itemName, itemAmount, partNumber);
-                MessageBox.Show("Items have been inserted into to the database!");
+                MessageBox.Show("Items toegevoegd aan de database.");
             }
             catch (Exception ex)
             {
