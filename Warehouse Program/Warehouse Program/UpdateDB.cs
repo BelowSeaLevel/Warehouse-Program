@@ -33,7 +33,7 @@ namespace Warehouse_Program
 
                     command.Parameters.AddWithValue("@itemName", itemName);
                     command.Parameters.AddWithValue("@itemAmount", itemAmount);
-                    command.Parameters.AddWithValue("@partNumber", partNumber);
+                    command.Parameters.AddWithValue("@partNumber", (object)partNumber ?? DBNull.Value);
                     command.Parameters.AddWithValue("@UpdateName", updateName);
 
                     connection.Open();

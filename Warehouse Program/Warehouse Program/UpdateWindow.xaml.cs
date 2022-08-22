@@ -32,7 +32,10 @@ namespace Warehouse_Program
 
         private void LBItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            updateName = LBItems.SelectedItem.ToString();
+            if (LBItems.SelectedItem != null)
+            { 
+                updateName = LBItems.SelectedItem.ToString();
+            }
         }
 
 
@@ -51,6 +54,8 @@ namespace Warehouse_Program
 
         private void BT_GetStock_Click(object sender, RoutedEventArgs e)
         {
+            LBItems.UnselectAll();
+            LBItems.Items.Clear();
             GetDataBase();
         }
 
