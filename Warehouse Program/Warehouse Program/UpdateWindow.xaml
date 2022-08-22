@@ -11,7 +11,7 @@
             <Label Content="Update Magazijn:" FontSize="38" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,455,0"></Label>
         </Grid>
         <ListBox x:Name="LBItems" d:ItemsSource="{Binding}" Margin="32,147,477,46" SelectionChanged="LBItems_SelectionChanged" FontSize="18" />
-        <Button Content="Oke" Margin="0,147,133,0" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top" FontSize="36" Click="Button_Click"/>
+        <Button x:Name="Oke_Button" Content="Oke" Margin="0,147,133,0" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top" FontSize="36" Click="Oke_Click"/>
         <Button x:Name="BT_GetStock" Content="Stock" Margin="0,231,133,0" FontSize="36" Click="BT_GetStock_Click" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top"/>
         <Label Content="Naam" FontSize="18" Margin="0,147,370,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60"/>
         <TextBox x:Name="TB_Naam" FontSize="18" HorizontalAlignment="Right" Margin="0,187,310,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30" TextChanged="TB_Naam_TextChanged"/>

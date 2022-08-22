@@ -83,10 +83,14 @@ namespace Warehouse_Program
             itemPartnummer = TB_PartNummer.Text;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Oke_Click(object sender, RoutedEventArgs e)
         {
             UpdateDB updateDB = new UpdateDB();
             updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, updateName);
+
+            TB_Naam.Clear();
+            TB_Aantal.Clear();
+            TB_PartNummer.Clear();
         }
     }
 

@@ -27,7 +27,7 @@ namespace Warehouse_Program
                     DataTable dt = new DataTable();
 
                     var query = $"UPDATE Stock SET Name = @itemName," +
-                        $"Amount = @itemAmount, [Part Number] = @partNumber) WHERE Name = @UpdateName";
+                        $"Amount = @itemAmount, [Part Number] = @partNumber WHERE Name = @UpdateName";
 
                     SqlCommand command = new SqlCommand(query, connection);
 
