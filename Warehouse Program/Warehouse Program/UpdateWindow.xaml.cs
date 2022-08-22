@@ -23,6 +23,7 @@ namespace Warehouse_Program
         private string itemNaam;
         private int itemAantal;
         private string itemPartnummer;
+        private string updateName;
 
         public UpdateWindow()
         {
@@ -31,8 +32,7 @@ namespace Warehouse_Program
 
         private void LBItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            UpdateDB updateDB = new UpdateDB();
-            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer);
+            updateName = LBItems.SelectedItem.ToString();
         }
 
 
@@ -81,6 +81,12 @@ namespace Warehouse_Program
         private void TB_PartNummer_TextChanged(object sender, TextChangedEventArgs e)
         {
             itemPartnummer = TB_PartNummer.Text;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateDB updateDB = new UpdateDB();
+            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, updateName);
         }
     }
 

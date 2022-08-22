@@ -18,7 +18,7 @@ namespace Warehouse_Program
         /// </summary>
         /// <param name="itemName"></param>
         /// <param name="itemAmount"></param>
-        internal void UpdateDataB(string itemName, int itemAmount, string partNumber)
+        internal void UpdateDataB(string itemName, int itemAmount, string partNumber, string updateName)
         {
             try
             {
@@ -26,13 +26,15 @@ namespace Warehouse_Program
                 {
                     DataTable dt = new DataTable();
 
-                    var query = $"UPDATE INTO Stock VALUES (@itemName, @itemAmount, @partNumber)";
+                    var query = $"UPDATE Stock SET Name = @itemName," +
+                        $"Amount = @itemAmount, [Part Number] = @partNumber) WHERE Name = @UpdateName";
 
                     SqlCommand command = new SqlCommand(query, connection);
 
                     command.Parameters.AddWithValue("@itemName", itemName);
                     command.Parameters.AddWithValue("@itemAmount", itemAmount);
                     command.Parameters.AddWithValue("@partNumber", partNumber);
+                    command.Parameters.AddWithValue("@UpdateName", updateName);
 
                     connection.Open();
 
