@@ -22,6 +22,7 @@ namespace Warehouse_Program
         readonly string[] seperators = { "\r", "\n" };
         string[] scanned;
         List<string> ItemsToList = new List<string>();
+        Dictionary<string, int> finalAmounts = new Dictionary<string, int>();
 
         public GoederenWindow()
         {
@@ -36,6 +37,19 @@ namespace Warehouse_Program
 
         private void B_Min_Click(object sender, RoutedEventArgs e)
         {
+            SplitList();
+            // update the Database "Aantal" Column based on the amount of times
+            // a word has been scanned.
+        }
+
+        private void B_Plus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        private void SplitList()
+        {
             // Makes an array filled with all words in the Scanned_Text Document.
             // And splits it based on the seperators array.
             scanned = new TextRange(Scanned_Text.Document.ContentStart, Scanned_Text.Document.ContentEnd).Text.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
@@ -46,8 +60,10 @@ namespace Warehouse_Program
                 ItemsToList.Add(word);
             }
 
-            // Below we need to update the database, by removing that amount of times an item,
-            // is scanned into the Scanned_Text Document.
+            // Make a dictionary with each word as key, and the amount of times it is
+            // present in the "ItemsToList" as Value, so we can update that Value
+            // for each time we read the same word.
+            
 
             // We need to find the duplicates of a name, and count how many times that duplicate
             // is present.
@@ -57,14 +73,15 @@ namespace Warehouse_Program
                    .ToList();
 
 
+            foreach (var x in duplicates)
+            {
+                finalAmounts.Add(x.Name, x.Count);
+            }
+
+
             var joined = string.Join(Environment.NewLine, ItemsToList.ToArray());
 
-            //MessageBox.Show();
-        }
-
-        private void B_Plus_Click(object sender, RoutedEventArgs e)
-        {
-
+            MessageBox.Show(joined);
         }
     }
 }
