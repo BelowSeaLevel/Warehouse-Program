@@ -48,8 +48,10 @@ namespace Warehouse_Program
         }
 
 
+        // SPLITLIST IS DONE AND WORKING!
         private void SplitList()
         {
+            int count;
             // Makes an array filled with all words in the Scanned_Text Document.
             // And splits it based on the seperators array.
             scanned = new TextRange(Scanned_Text.Document.ContentStart, Scanned_Text.Document.ContentEnd).Text.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
@@ -60,28 +62,24 @@ namespace Warehouse_Program
                 ItemsToList.Add(word);
             }
 
-            // Make a dictionary with each word as key, and the amount of times it is
-            // present in the "ItemsToList" as Value, so we can update that Value
-            // for each time we read the same word.
-            
-
-            // We need to find the duplicates of a name, and count how many times that duplicate
-            // is present.
-            var duplicates = ItemsToList.GroupBy(x => x)
-                   .Where(g => g.Count() > 1)
-                   .Select(y => new { Name = y.Key, Count = y.Count() })
-                   .ToList();
-
-
-            foreach (var x in duplicates)
+            // Foreach item in scanned, we check or it is already in finalAmounts,
+            // If it is, we do it's value + 1.
+            // If it is not yet in finalAmounts, we add it as new with count being 1.
+            foreach (string item in scanned)
             {
-                finalAmounts.Add(x.Name, x.Count);
+                if(finalAmounts.ContainsKey(item))
+                {
+                    count = finalAmounts[item];
+                    count++;
+                    finalAmounts[item] = count;
+                }
+                else if (!finalAmounts.ContainsKey(item))
+                { 
+                    count = 1;
+                    finalAmounts.Add(item, count);
+                }
             }
 
-
-            var joined = string.Join(Environment.NewLine, ItemsToList.ToArray());
-
-            MessageBox.Show(joined);
         }
     }
 }
