@@ -19,6 +19,7 @@
         <TextBox x:Name="TB_Aantal" FontSize="18" HorizontalAlignment="Right" Margin="0,272,310,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30" TextChanged="TB_Aantal_TextChanged"/>
         <Label Content="Part Nummer" FontSize="18" HorizontalAlignment="Right" Margin="0,318,311,0" VerticalAlignment="Top" Height="35" Width="119"/>
         <TextBox x:Name="TB_PartNummer" FontSize="18" HorizontalAlignment="Right" Margin="0,358,310,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30" TextChanged="TB_PartNummer_TextChanged"/>
+        <Button Content="Delete" Margin="0,358,133,0" Click="Delete_Click" FontSize="18" HorizontalAlignment="Right" Width="57" Height="30" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

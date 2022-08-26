@@ -6,12 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Warehouse_Program
 {
@@ -23,7 +17,7 @@ namespace Warehouse_Program
         private string itemNaam;
         private int itemAantal;
         private string itemPartnummer;
-        private string updateName;
+        private string selectedName;
 
         public UpdateWindow()
         {
@@ -34,7 +28,7 @@ namespace Warehouse_Program
         {
             if (LBItems.SelectedItem != null)
             { 
-                updateName = LBItems.SelectedItem.ToString();
+                selectedName = LBItems.SelectedItem.ToString();
             }
         }
 
@@ -91,11 +85,31 @@ namespace Warehouse_Program
         private void Oke_Click(object sender, RoutedEventArgs e)
         {
             UpdateDB updateDB = new UpdateDB();
-            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, updateName);
+            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, selectedName);
 
             TB_Naam.Clear();
             TB_Aantal.Clear();
             TB_PartNummer.Clear();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            // MessageBox with Yes/No buttons. And a question / title for the window.
+            MessageBoxResult result = MessageBox.Show($"Weet je zeker dat je '{selectedName}' wilt verwijderen?", "Item Verwijderen", MessageBoxButton.YesNo);
+            
+            // If the result is yes. We Delete the selected item. And show a message.
+            if (result == MessageBoxResult.Yes)
+            {
+                DB_Delete_Item del = new DB_Delete_Item();
+                del.DeleteItem(selectedName);
+                MessageBox.Show($"{selectedName} is verwijdert!");
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                
+            }
+
+            
         }
     }
 

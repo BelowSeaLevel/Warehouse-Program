@@ -38,13 +38,13 @@ C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Wa
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program_Content.g.cs
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program_MarkupCompile.cache
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program_MarkupCompile.lref
-C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\IncommingWindow.baml
-C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\MainWindow.baml
-C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Goederen.baml
-C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\UpdateWindow.baml
-C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.g.resources
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse_Program.Properties.Resources.resources
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.GenerateResource.cache
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.CoreCompileInputs.cache
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.exe
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.pdb
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\IncommingWindow.baml
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\MainWindow.baml
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Goederen.baml
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\UpdateWindow.baml
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.g.resources
