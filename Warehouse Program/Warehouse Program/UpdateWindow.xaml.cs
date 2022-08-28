@@ -24,40 +24,48 @@ namespace Warehouse_Program
             InitializeComponent();
         }
 
-        private void LBItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (LBItems.SelectedItem != null)
-            { 
-                selectedName = LBItems.SelectedItem.ToString();
-            }
-        }
-
-
+        /// <summary>
+        /// Gets Database information for the UpdateWindow
+        /// </summary>
         private void GetDataBase()
         {
-            ShowStock peek = new ShowStock();         // Makes a new ShowStock class.
-            DataTable reading = peek.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
-            
-            foreach (DataRow row in reading.Rows)
+            ShowStock stock = new ShowStock();         // Makes a new ShowStock class.
+            DataTable item = stock.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
+
+            foreach (DataRow row in item.Rows)
             {
-                LBItems.Items.Add(row[1]);   // Show the names of the items in the ListBox
+                LBItems.Items.Add(row[0]);   // Show the names of the items in the ListBox
             }
-            
-            
+
+
         }
 
+        // Listbox item.
+        private void LBItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LBItems.SelectedItem != null)   // If we have something selected.
+            { 
+                selectedName = LBItems.SelectedItem.ToString(); // then 'selectedName' is set to the name of that item.
+            }
+        }
+
+
+        
+        // Button that gets the stock data.
         private void BT_GetStock_Click(object sender, RoutedEventArgs e)
         {
-            LBItems.UnselectAll();
-            LBItems.Items.Clear();
-            GetDataBase();
+            LBItems.UnselectAll();  // Unselects all items.
+            LBItems.Items.Clear();  // Clears the listbox, before refilling it.
+            GetDataBase();          // Calls the GetDataBase method.
         }
 
+        // Textbox for the name.
         private void TB_Naam_TextChanged(object sender, TextChangedEventArgs e)
         {
             itemNaam = TB_Naam.Text;
         }
 
+        // Textbox for the amount.
         private void TB_Aantal_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
@@ -66,27 +74,30 @@ namespace Warehouse_Program
                 // Because that would call the MessageBox twice.
                 if (TB_Aantal.Text != "")
                 {
-                    itemAantal = int.Parse(TB_Aantal.Text);
+                    itemAantal = int.Parse(TB_Aantal.Text); // Parses the input into an integer.
                 }
 
             }
             catch (FormatException)
             {
                 TB_Aantal.Clear();
-                MessageBox.Show("De 'Aantal' Textbox verwacht een nummer!");
+                MessageBox.Show("Het 'Aantal' tekstveld verwacht een nummer!");
             }
         }
 
+        // Textbox for the part number
         private void TB_PartNummer_TextChanged(object sender, TextChangedEventArgs e)
         {
             itemPartnummer = TB_PartNummer.Text;
         }
 
+        // The Oke button click event.
         private void Oke_Click(object sender, RoutedEventArgs e)
         {
-            UpdateDB updateDB = new UpdateDB();
-            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, selectedName);
+            UpdateDB updateDB = new UpdateDB(); // Makes a new UpdateDB object.
+            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, selectedName);   // Updates the database with the values given.
 
+            // Clears the textboxes.
             TB_Naam.Clear();
             TB_Aantal.Clear();
             TB_PartNummer.Clear();
@@ -106,7 +117,7 @@ namespace Warehouse_Program
             }
             else if (result == MessageBoxResult.No)
             {
-                
+                // If no, we do nothing.
             }
 
             
