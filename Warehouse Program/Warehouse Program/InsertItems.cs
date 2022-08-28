@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Data;
 using System.Windows;
 
 namespace Warehouse_Program

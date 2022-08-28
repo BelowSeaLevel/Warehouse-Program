@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Warehouse_Program
@@ -13,6 +9,11 @@ namespace Warehouse_Program
         // New DBConnection Object, to get the database connectionstring
         private readonly DBConnection dB = new DBConnection();
 
+
+        /// <summary>
+        /// Delets items from the Database.
+        /// </summary>
+        /// <param name="itemName"></param>
         internal void DeleteItem(string itemName)
         {
             try
