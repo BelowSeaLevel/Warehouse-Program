@@ -21,7 +21,6 @@ namespace Warehouse_Program
     {
         readonly string[] seperators = { "\r", "\n" };
         string[] scanned;
-        List<string> ItemsToList = new List<string>();
         Dictionary<string, int> finalAmounts = new Dictionary<string, int>();
 
         public GoederenWindow()
@@ -40,6 +39,8 @@ namespace Warehouse_Program
             SplitList();
             // update the Database "Aantal" Column based on the amount of times
             // a word has been scanned.
+            // We could use the finalAmounts dictionary for this, and something
+            // similiar as the UpdateDB.cs file.
         }
 
         private void B_Plus_Click(object sender, RoutedEventArgs e)
@@ -56,11 +57,7 @@ namespace Warehouse_Program
             // And splits it based on the seperators array.
             scanned = new TextRange(Scanned_Text.Document.ContentStart, Scanned_Text.Document.ContentEnd).Text.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
 
-            // Put each word from the scanned array into a list.
-            foreach (string word in scanned)
-            {
-                ItemsToList.Add(word);
-            }
+            
 
             // Foreach item in scanned, we check or it is already in finalAmounts,
             // If it is, we do it's value + 1.
