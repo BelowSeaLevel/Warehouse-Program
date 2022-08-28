@@ -28,9 +28,7 @@ namespace Warehouse_Program
 
 
         /// <summary>
-        /// For all incomming items.
-        /// This means the items will be increased in count.
-        /// as this is new items comming into the warehouse.
+        /// Makes a new Window, where you can input new items into your stock.
         /// </summary>
         private void BTIncomming_Click(object sender, RoutedEventArgs e)
         {
@@ -41,9 +39,7 @@ namespace Warehouse_Program
 
 
         /// <summary>
-        /// For all outgoing Items.
-        /// This means items are going out of the warehouse
-        /// to the customers.
+        /// Makes a new Window, where you can increase or decrease the items amount you have.
         /// </summary>
         private void BTGoederen_Click(object sender, RoutedEventArgs e)
         {
@@ -64,7 +60,7 @@ namespace Warehouse_Program
 
 
         /// <summary>
-        /// Update's the database, incase your database does not match the physical stock.
+        /// Makes a new Window, where you can Update your stock.
         /// </summary>
         private void BTUpdate_Click(object sender, RoutedEventArgs e)
         {
