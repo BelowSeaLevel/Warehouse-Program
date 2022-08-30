@@ -36,21 +36,45 @@ namespace Warehouse_Program
 
         private void B_Min_Click(object sender, RoutedEventArgs e)
         {
-            SplitList();
+            finalAmounts.Clear();
+
+            SplitArray();
             // update the Database "Aantal" Column based on the amount of times
             // a word has been scanned.
             // We could use the finalAmounts dictionary for this, and something
+            
+            
             // similiar as the UpdateDB.cs file.
+            UpdateGoederen updateGoederen = new UpdateGoederen();
+            foreach(var item in finalAmounts)
+            {
+                updateGoederen.DecreaseDB(item.Key, item.Value);
+            }
+
         }
 
         private void B_Plus_Click(object sender, RoutedEventArgs e)
         {
+            // Clears the Dictionary, otherwise counts would stack.
+            // And you would get a wrong amount updated.
+            finalAmounts.Clear();
 
+
+            SplitArray();
+
+
+            // Update the Database "Aantal" Column based on the amount of times
+            // a word has been scanned.
+            UpdateGoederen updateGoederen = new UpdateGoederen();
+            foreach (var item in finalAmounts)
+            {
+                updateGoederen.IncreaseDB(item.Key, item.Value);
+            }
         }
 
 
-        // SPLITLIST IS DONE AND WORKING!
-        private void SplitList()
+        // Splits the array in only the words we need, so we can update the Datebase.
+        private void SplitArray()
         {
             int count;
             // Makes an array filled with all words in the Scanned_Text Document.

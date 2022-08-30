@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="ShowStock.cs" />
     <Compile Include="UpdateDB.cs" />
+    <Compile Include="UpdateGoederen.cs" />
     <Compile Include="UpdateWindow.xaml.cs">
       <DependentUpon>UpdateWindow.xaml</DependentUpon>
     </Compile>
