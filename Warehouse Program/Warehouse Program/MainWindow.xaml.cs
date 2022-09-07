@@ -27,6 +27,18 @@ namespace Warehouse_Program
         }
 
 
+        private void Export_Click(object sender, RoutedEventArgs e)
+        {
+            // How to Export to Excel??
+            DataTable dataTable = new DataTable();
+            ShowStock showStock = new ShowStock();
+            dataTable = showStock.GetAllItems();
+
+            MessageBox.Show("Exporting Items.");
+        }
+
+
+
         /// <summary>
         /// Makes a new Window, where you can input new items into your stock.
         /// </summary>
