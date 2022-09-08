@@ -51,6 +51,7 @@ namespace Warehouse_Program
                 updateGoederen.DecreaseDB(item.Key, item.Value);
             }
 
+            Scanned_Text.Document.Blocks.Clear();
         }
 
         private void B_Plus_Click(object sender, RoutedEventArgs e)
@@ -70,6 +71,8 @@ namespace Warehouse_Program
             {
                 updateGoederen.IncreaseDB(item.Key, item.Value);
             }
+
+            Scanned_Text.Document.Blocks.Clear();
         }
 
 

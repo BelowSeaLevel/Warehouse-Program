@@ -20,17 +20,16 @@ namespace Warehouse_Program
                 using (SqlConnection connection = new SqlConnection(dB.connectionString))
                 {
                     // Query that goes into the database
-                    var query = $"INSERT INTO Stock VALUES (@itemName, @itemAmount, @partNumber)";
+                    var query = $"INSERT INTO Stock VALUES (@itemName, @itemAmount, @partNumber, @UitDw, @OntvDw)";
 
                     SqlCommand command = new SqlCommand(query, connection);
 
                     // Adds the value's to the query string.
                     command.Parameters.AddWithValue("@itemName", itemName);
                     command.Parameters.AddWithValue("@itemAmount", itemAmount);
-                    command.Parameters.AddWithValue("@partNumber", (object)partNumber ?? DBNull.Value);
-                    // Allows the above partNumber to be Null,
-                    // however we need to make the variable an object in order to work with DBNull.
-
+                    command.Parameters.AddWithValue("@partNumber", (object)partNumber ?? DBNull.Value); // Allows the partNumber to be Null, however we need to make the variable an object in order to work with DBNull.
+                    command.Parameters.AddWithValue("@UitDW", 0);
+                    command.Parameters.AddWithValue("@OntvDw", 0);
 
 
                     connection.Open();  // Opens the connection to database
