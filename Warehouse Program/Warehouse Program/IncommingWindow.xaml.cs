@@ -46,7 +46,7 @@ namespace Warehouse_Program
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Het aantal is te groot!!");
+                        MessageBox.Show("Het aantal is te groot!!", "Waarschuwing");
                         Amount_Textbox.Clear();
                     }
 
@@ -56,7 +56,7 @@ namespace Warehouse_Program
             catch (FormatException)
             {
                 Amount_Textbox.Clear();
-                MessageBox.Show("De 'Aantal' Textbox verwacht een nummer!");
+                MessageBox.Show("De 'Aantal' Textbox verwacht een nummer!", "Waarschuwing");
             }
 
         }
@@ -73,7 +73,7 @@ namespace Warehouse_Program
             try
             {
                 insert.InsertItemsDB(itemName, itemAmount, partNumber);
-                MessageBox.Show("Items toegevoegd aan de database.");
+                MessageBox.Show("Items toegevoegd aan de database.", "Melding");
             }
             catch (Exception ex)
             {

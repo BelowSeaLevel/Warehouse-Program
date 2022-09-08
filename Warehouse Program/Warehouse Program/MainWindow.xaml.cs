@@ -42,7 +42,7 @@ namespace Warehouse_Program
         {
             UpdateDB updateDB = new UpdateDB();
             updateDB.ResetWeekly();
-            MessageBox.Show("Week aantallen zijn ge-reset!");
+            MessageBox.Show("Week aantallen zijn ge-reset!", "Melding");
         }
 
 

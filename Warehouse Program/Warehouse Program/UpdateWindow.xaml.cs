@@ -81,7 +81,7 @@ namespace Warehouse_Program
             catch (FormatException)
             {
                 TB_Aantal.Clear();
-                MessageBox.Show("Het 'Aantal' tekstveld verwacht een nummer!");
+                MessageBox.Show("Het 'Aantal' tekstveld verwacht een nummer!", "Waarschuwing");
             }
         }
 
@@ -95,7 +95,16 @@ namespace Warehouse_Program
         private void Oke_Click(object sender, RoutedEventArgs e)
         {
             UpdateDB updateDB = new UpdateDB(); // Makes a new UpdateDB object.
-            updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, selectedName);   // Updates the database with the values given.
+            
+            if (TB_Aantal.Text != "")
+            {
+                updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, selectedName);   // Updates the database with the values given.
+
+            }
+            else
+            {
+                MessageBox.Show("Vul een 'Aantal' in! \nAnders reset je het aantal naar 0.", "Waarschuwing");
+            }
 
             // Clears the textboxes.
             TB_Naam.Clear();
