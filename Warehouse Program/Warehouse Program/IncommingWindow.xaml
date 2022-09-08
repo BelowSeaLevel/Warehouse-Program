@@ -14,7 +14,7 @@
         <TextBox x:Name="Amount_Textbox" HorizontalAlignment="Left" Margin="90,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Amount_Textbox_TextChanged" TabIndex="2"/>
         <Label x:Name="Name_Label" Content="Naam:" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Amount_Label" Content="Aantal:" HorizontalAlignment="Left" Margin="39,132,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Commit_Button" Content="Oke" HorizontalAlignment="Left" Margin="88,215,0,0" VerticalAlignment="Top" Height="53" Width="108" FontSize="22" Click="Commit_Button_Click" TabIndex="4"/>
+        <Button x:Name="Commit_Button" Content="Ok" HorizontalAlignment="Left" Margin="88,215,0,0" VerticalAlignment="Top" Height="53" Width="108" FontSize="22" Click="Commit_Button_Click" TabIndex="4"/>
         <Label Content="Part Nummer:" HorizontalAlignment="Left" Margin="7,163,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="PN_Textbox" HorizontalAlignment="Left" Margin="90,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="PN_Textbox_TextChanged" TabIndex="3"/>
 
