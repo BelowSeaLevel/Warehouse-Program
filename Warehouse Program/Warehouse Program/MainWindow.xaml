@@ -12,6 +12,7 @@
             <Menu Margin="0,0,0,52">
                 <MenuItem Header="File" Height="22">
                     <MenuItem Header="Export" Click="Export_Click"></MenuItem>
+                    <MenuItem Header="Reset Weekelijks Verschil" Click="Reset_W_Verschil"></MenuItem>
                 </MenuItem>
             </Menu>
         </Grid>

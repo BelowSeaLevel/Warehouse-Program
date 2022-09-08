@@ -53,6 +53,36 @@ namespace Warehouse_Program
         }
 
 
-        
+
+        internal void ResetWeekly()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(dB.connectionString))
+                {
+                    DataTable dt = new DataTable();
+
+                    var query = $"UPDATE Stock SET [Uit Dw] = 0,[Ontv Dw] = 0";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+
+                    command.Dispose();
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Source: " + e.Source + "\n" + "Message: " + e.Message + "\n" + "StackTrace: " + e.StackTrace);
+
+            }
+
+        }
+
     }
 }

@@ -37,6 +37,13 @@ namespace Warehouse_Program
             MessageBox.Show("Exporting Items.");
         }
 
+        // Resets the weekly difference in Received and Issued items.
+        private void Reset_W_Verschil(object sender, RoutedEventArgs e)
+        {
+            UpdateDB updateDB = new UpdateDB();
+            updateDB.ResetWeekly();
+            MessageBox.Show("Week aantallen zijn ge-reset!");
+        }
 
 
         /// <summary>
