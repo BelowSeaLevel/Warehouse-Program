@@ -28,7 +28,7 @@ namespace Warehouse_Program
                 {
                     DataTable dt = new DataTable();
 
-                    var query = $"UPDATE Stock SET Aantal = Aantal + @itemAmount WHERE Naam = @itemName";
+                    var query = $"UPDATE Stock SET Aantal = Aantal + @itemAmount, [Ontv Dw] = [Ontv Dw] + @itemAmount =  WHERE Naam = @itemName";
 
                     SqlCommand command = new SqlCommand(query, connection);
 
@@ -53,7 +53,7 @@ namespace Warehouse_Program
 
 
         /// <summary>
-        /// Increases the 'Aantal' for every item.
+        /// Decrease the 'Aantal' for every item.
         /// </summary>
         /// <param name="itemName"></param>
         /// <param name="itemAmount"></param>
@@ -65,7 +65,7 @@ namespace Warehouse_Program
                 {
                     DataTable dt = new DataTable();
 
-                    var query = $"UPDATE Stock SET Aantal = Aantal - @itemAmount WHERE Naam = @itemName";
+                    var query = $"UPDATE Stock SET Aantal = Aantal - @itemAmount, [Uit Dw] = [Uit Dw] + @itemAmount WHERE Naam = @itemName";
 
                     SqlCommand command = new SqlCommand(query, connection);
 
