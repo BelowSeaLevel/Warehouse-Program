@@ -40,7 +40,16 @@ namespace Warehouse_Program
                 // Because that would call the MessageBox twice.
                 if (Amount_Textbox.Text != "")
                 {
-                    itemAmount = int.Parse(Amount_Textbox.Text);
+                    try
+                    {
+                        itemAmount = int.Parse(Amount_Textbox.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Het aantal is te groot!!");
+                        Amount_Textbox.Clear();
+                    }
+
                 }
 
             }

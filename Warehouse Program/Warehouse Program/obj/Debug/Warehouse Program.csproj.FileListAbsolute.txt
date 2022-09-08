@@ -48,3 +48,6 @@ C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Wa
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Goederen.baml
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\UpdateWindow.baml
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.g.resources
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.CopyComplete
