@@ -51,3 +51,8 @@ C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Wa
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\obj\Debug\Warehouse Program.csproj.CopyComplete
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\ClosedXML.dll
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\ExcelNumberFormat.dll
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\ClosedXML.pdb
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\ClosedXML.xml
+C:\Users\brroo\Source\Repos\BelowSeaLevel\Warehouse-Program\Warehouse Program\Warehouse Program\bin\Debug\ExcelNumberFormat.xml
