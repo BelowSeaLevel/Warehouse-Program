@@ -11,15 +11,15 @@
             <Label Content="Update Magazijn:" FontSize="38" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,455,0"></Label>
         </Grid>
         <ListBox x:Name="LBItems" d:ItemsSource="{Binding}" Margin="32,147,477,46" SelectionChanged="LBItems_SelectionChanged" FontSize="18" />
-        <Button x:Name="Oke_Button" Content="Ok" Margin="0,147,133,0" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top" FontSize="36" Click="Oke_Click"/>
-        <Button x:Name="BT_GetStock" Content="Stock" Margin="0,231,133,0" FontSize="36" Click="BT_GetStock_Click" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top"/>
+        <Button x:Name="Oke_Button" Content="Ok" Margin="0,147,83,0" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top" FontSize="36" Click="Oke_Click"/>
+        <Button x:Name="BT_GetStock" Content="Stock" Margin="0,231,83,0" FontSize="36" Click="BT_GetStock_Click" HorizontalAlignment="Right" Width="99" Height="50" VerticalAlignment="Top"/>
         <Label Content="Naam" FontSize="18" Margin="0,147,370,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60"/>
-        <TextBox x:Name="TB_Naam" FontSize="18" HorizontalAlignment="Right" Margin="0,187,310,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30" TextChanged="TB_Naam_TextChanged"/>
+        <TextBox x:Name="TB_Naam" FontSize="18" HorizontalAlignment="Right" Margin="0,187,260,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="170" Height="30" TextChanged="TB_Naam_TextChanged"/>
         <Label Content="Aantal" FontSize="18" HorizontalAlignment="Right" Margin="0,232,370,0" VerticalAlignment="Top" Height="35" Width="60"/>
-        <TextBox x:Name="TB_Aantal" FontSize="18" HorizontalAlignment="Right" Margin="0,272,310,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30" TextChanged="TB_Aantal_TextChanged"/>
+        <TextBox x:Name="TB_Aantal" FontSize="18" HorizontalAlignment="Right" Margin="0,272,260,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="170" Height="30" TextChanged="TB_Aantal_TextChanged"/>
         <Label Content="Part Nummer" FontSize="18" HorizontalAlignment="Right" Margin="0,318,311,0" VerticalAlignment="Top" Height="35" Width="119"/>
-        <TextBox x:Name="TB_PartNummer" FontSize="18" HorizontalAlignment="Right" Margin="0,358,310,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30" TextChanged="TB_PartNummer_TextChanged"/>
-        <Button Content="Delete" Margin="0,358,133,0" Click="Delete_Click" FontSize="18" HorizontalAlignment="Right" Width="57" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="TB_PartNummer" FontSize="18" HorizontalAlignment="Right" Margin="0,358,260,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="170" Height="30" TextChanged="TB_PartNummer_TextChanged"/>
+        <Button Content="Delete" Margin="0,358,83,0" Click="Delete_Click" FontSize="18" HorizontalAlignment="Right" Width="57" Height="30" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
