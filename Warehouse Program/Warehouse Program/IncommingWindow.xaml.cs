@@ -44,7 +44,7 @@ namespace Warehouse_Program
                     {
                         itemAmount = int.Parse(Amount_Textbox.Text);
                     }
-                    catch (Exception)
+                    catch (OverflowException)
                     {
                         MessageBox.Show("Het aantal is te groot!!", "Waarschuwing");
                         Amount_Textbox.Clear();
