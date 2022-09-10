@@ -36,7 +36,7 @@ namespace Warehouse_Program
             DateTime today = DateTime.Now;
             
 
-            if(today.DayOfWeek == DayOfWeek.Saturday && today.Hour >= 20 && today.Hour <= 20)
+            if(today.DayOfWeek == DayOfWeek.Saturday && today.Hour >= 20 && today.Hour <= 21)
             {
                 Label_Reminder.Visibility= Visibility.Visible;
             }
