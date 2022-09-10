@@ -35,6 +35,7 @@ namespace Warehouse_Program
             MondayCheck();
         }
 
+        // Checks wether it is Monday between 7:00 & 8:00
         private void MondayCheck()
         {
 
