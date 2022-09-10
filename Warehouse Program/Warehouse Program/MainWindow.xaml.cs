@@ -26,6 +26,21 @@ namespace Warehouse_Program
         public MainWindow()
         {
             InitializeComponent();
+
+            Label_Reminder.Visibility = Visibility.Collapsed;
+            MondayCheck();
+        }
+
+        private void MondayCheck()
+        {
+            DateTime today = DateTime.Now;
+            
+
+            if(today.DayOfWeek == DayOfWeek.Saturday && today.Hour >= 20 && today.Hour <= 20)
+            {
+                Label_Reminder.Visibility= Visibility.Visible;
+            }
+
         }
 
 
@@ -36,9 +51,9 @@ namespace Warehouse_Program
         /// <param name="e"></param>
         private void Export_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dataTable = new DataTable();  // Create a datatable to hold database data.
+            //DataTable dataTable = new DataTable();  // Create a datatable to hold database data.
             ShowStock showStock = new ShowStock();  // Makes a new ShowStock Class.
-            dataTable = showStock.GetAllItems();    // Fill the dataTable with the database data.
+            DataTable dataTable = showStock.GetAllItems();    // Fill the dataTable with the database data.
 
             // Below we use the SaveFileDialog to open a dialogwindow,
             // where we can save the file in the correct place.
