@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,20 +28,24 @@ namespace Warehouse_Program
         {
             InitializeComponent();
 
+
             Label_Reminder.Visibility = Visibility.Collapsed;
+
+
             MondayCheck();
         }
 
         private void MondayCheck()
         {
-            DateTime today = DateTime.Now;
-            
 
-            if(today.DayOfWeek == DayOfWeek.Saturday && today.Hour >= 20 && today.Hour <= 21)
+            DateTime today = DateTime.Now;
+
+
+            if (today.DayOfWeek == DayOfWeek.Monday && today.Hour >= 7 && today.Hour <= 8)
             {
                 Label_Reminder.Visibility= Visibility.Visible;
             }
-
+           
         }
 
 
@@ -84,6 +89,7 @@ namespace Warehouse_Program
         {
             UpdateDB updateDB = new UpdateDB();
             updateDB.ResetWeekly();
+            Label_Reminder.Visibility = Visibility.Collapsed;
             System.Windows.MessageBox.Show("Week aantallen zijn ge-reset!", "Melding");
         }
 
