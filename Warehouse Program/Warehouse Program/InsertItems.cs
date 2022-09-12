@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Data;
 using System.Windows;
 
 namespace Warehouse_Program
@@ -13,36 +12,36 @@ namespace Warehouse_Program
         /// <summary>
         /// Inserts items into the database.
         /// </summary>
-        internal DataTable InsertItemsDB(string itemName, int itemAmount, string partNumber)
+        internal void InsertItemsDB(string itemName, int itemAmount, string partNumber)
         {
             try
             {
+                // Using the 'using' statement here to close the connection  automatically
                 using (SqlConnection connection = new SqlConnection(dB.connectionString))
                 {
-                    DataTable dt = new DataTable();
-
-                    var query = $"INSERT INTO Stock (Name, Amount, Part Number) VALUES ({itemName}, {itemAmount}, {partNumber})";
+                    // Query that goes into the database
+                    var query = $"INSERT INTO Stock VALUES (@itemName, @itemAmount, @partNumber, @UitDw, @OntvDw)";
 
                     SqlCommand command = new SqlCommand(query, connection);
 
-                    connection.Open();
+                    // Adds the value's to the query string.
+                    command.Parameters.AddWithValue("@itemName", itemName);
+                    command.Parameters.AddWithValue("@itemAmount", itemAmount);
+                    command.Parameters.AddWithValue("@partNumber", (object)partNumber ?? DBNull.Value); // Allows the partNumber to be Null, however we need to make the variable an object in order to work with DBNull.
+                    command.Parameters.AddWithValue("@UitDW", 0);
+                    command.Parameters.AddWithValue("@OntvDw", 0);
 
-                    command.ExecuteNonQuery();
 
-                    SqlDataReader dReader = command.ExecuteReader();
+                    connection.Open();  // Opens the connection to database
 
-                    dt.Load(dReader);
+                    command.ExecuteNonQuery();  // Executes the query
 
-
-                    command.Dispose();
-
-                    return dt;
+                    command.Dispose();  // Dispose of resources we don't need anymore
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("An Excepption has occurred!" + " Source: " + e.Message);
-                return null;
             }
 
         }

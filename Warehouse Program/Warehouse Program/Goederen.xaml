@@ -22,14 +22,14 @@
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Button x:Name="B_min" Grid.Column="1" Content="Min" HorizontalAlignment="Left" Margin="174,161,0,0" VerticalAlignment="Top" Height="45" Width="119" FontSize="24" Click="B_Min_Click">
+            <Button x:Name="B_min" Grid.Column="1" Content="Min" Margin="0,161,107,0" FontSize="24" Click="B_Min_Click" HorizontalAlignment="Right" Width="119" Height="45" VerticalAlignment="Top">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"></Setter>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="B_Plus" Grid.Column="1" Content="Plus" HorizontalAlignment="Left" Margin="174,77,0,0" VerticalAlignment="Top" Height="45" Width="119" FontSize="24" Click="B_Plus_Click">
+            <Button x:Name="B_Plus" Grid.Column="1" Content="Plus" Margin="0,77,107,0" FontSize="24" Click="B_Plus_Click" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Width="119">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"></Setter>

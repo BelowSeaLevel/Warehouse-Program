@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Warehouse Program")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A warehouse program, used to store, change, add & subtract items.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Warehouse Program")]
-[assembly: AssemblyCopyright("Copyright © HP 2022")]
+[assembly: AssemblyCopyright("Copyright © Roy Rooseboom")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

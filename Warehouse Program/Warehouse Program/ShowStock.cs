@@ -43,7 +43,7 @@ namespace Warehouse_Program
             catch (Exception e)
             {
                 MessageBox.Show("Source: " + e.Source + "\n" + "Message: " + e.Message + "\n" + "StackTrace: " + e.StackTrace);
-                return null;
+                return null; // Must return null, as this Method must always return something.
             }
 
         }

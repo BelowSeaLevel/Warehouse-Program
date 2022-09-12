@@ -38,18 +38,32 @@ namespace Warehouse_Program
             {
                 // With this 'if' statement we make sure, that we won't get 2 Exceptions.
                 // Because that would call the MessageBox twice.
-                if(Amount_Textbox.Text != "" )
+                if (Amount_Textbox.Text != "")
                 {
-                    itemAmount = int.Parse(Amount_Textbox.Text);
+                    try
+                    {
+                        itemAmount = int.Parse(Amount_Textbox.Text);
+                    }
+                    catch (OverflowException)
+                    {
+                        MessageBox.Show("Het aantal is te groot!!", "Waarschuwing");
+                        Amount_Textbox.Clear();
+                    }
+
                 }
-                
+
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 Amount_Textbox.Clear();
-                MessageBox.Show("The 'Amount' textbox needs a number as input!");
+                MessageBox.Show("De 'Aantal' Textbox verwacht een nummer!", "Waarschuwing");
             }
 
+        }
+
+        private void PN_Textbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            partNumber = PN_Textbox.Text;
         }
 
         private void Commit_Button_Click(object sender, RoutedEventArgs e)
@@ -59,22 +73,20 @@ namespace Warehouse_Program
             try
             {
                 insert.InsertItemsDB(itemName, itemAmount, partNumber);
-                MessageBox.Show("Items have been inserted into to the database!");
+                MessageBox.Show("Items toegevoegd aan de database.", "Melding");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Exception has occurred!" + ex.Message);
             }
 
-            
+
 
             Name_Textbox.Clear();
             Amount_Textbox.Clear();
+            PN_Textbox.Clear();
         }
 
-        private void PN_Textbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            partNumber = PN_Textbox.Text;
-        }
+
     }
 }
