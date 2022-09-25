@@ -118,7 +118,7 @@ namespace Warehouse_Program
         /// <summary>
         /// Gets the data from the database, and shows them in a DataWindow.
         /// </summary>
-        private void ShowStock_Click(object sender, RoutedEventArgs e)
+        private void BTStock_Click(object sender, RoutedEventArgs e)
         {
             ShowStock peek = new ShowStock();         // Makes a new ShowStock class.
             DataTable reading = peek.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
@@ -136,5 +136,53 @@ namespace Warehouse_Program
             window.Show();
             
         }
+
+
+        #region ButtonEnter And Leave
+        private void BTUpdateEnter(object sender, RoutedEventArgs e)
+        {
+            BTUpdate.FontSize = 40;
+        }
+
+        
+        private void BTUpdateLeave(object sender, RoutedEventArgs e)
+        {
+            BTUpdate.FontSize = 30;
+        }
+
+        private void BTGoederenEnter(object sender, RoutedEventArgs e)
+        {
+            BTGoederen.FontSize = 37;
+        }
+
+
+        private void BTGoederenLeave(object sender, RoutedEventArgs e)
+        {
+            BTGoederen.FontSize = 30;
+        }
+
+        private void BTInkomendEnter(object sender, RoutedEventArgs e)
+        {
+            BTIncomming.FontSize = 27;
+        }
+
+
+        private void BTInkomendLeave(object sender, RoutedEventArgs e)
+        {
+            BTIncomming.FontSize = 23;
+        }
+
+        private void BTStockEnter(object sender, RoutedEventArgs e)
+        {
+            BTStock.FontSize = 38;
+        }
+
+
+        private void BTStockLeave(object sender, RoutedEventArgs e)
+        {
+            BTStock.FontSize = 30;
+        }
+
+        #endregion
     }
 }
