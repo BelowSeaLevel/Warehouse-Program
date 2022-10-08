@@ -6,3 +6,6 @@ temp/
 
 # ignore ALL files in FileContentIndex
 /.vs/Warehouse-Program/FileContentIndex
+
+# ignore ALL .vsidx files in FileContentIndex folder
+*.vsidx
