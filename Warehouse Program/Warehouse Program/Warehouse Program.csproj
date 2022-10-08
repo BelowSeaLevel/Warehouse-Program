@@ -82,6 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DB_Delete_Item.cs" />
+    <Compile Include="Export.cs" />
     <Compile Include="IncommingWindow.xaml.cs">
       <DependentUpon>IncommingWindow.xaml</DependentUpon>
     </Compile>
