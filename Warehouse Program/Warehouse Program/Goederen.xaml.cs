@@ -39,12 +39,8 @@ namespace Warehouse_Program
             finalAmounts.Clear();
 
             SplitArray();
-            // update the Database "Aantal" Column based on the amount of times
-            // a word has been scanned.
-            // We could use the finalAmounts dictionary for this, and something
             
             
-            // similiar as the UpdateDB.cs file.
             UpdateGoederen updateGoederen = new UpdateGoederen();
             foreach(var item in finalAmounts)
             {
