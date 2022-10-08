@@ -29,8 +29,8 @@ namespace Warehouse_Program
         /// </summary>
         private void GetDataBase()
         {
-            ShowStock stock = new ShowStock();         // Makes a new ShowStock class.
-            DataTable item = stock.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
+            DBActions actions = new DBActions();
+            DataTable item = actions.ActionGetAllItems();    // Get all data from the ShowStock class, through the GetAllItems Method.
 
             foreach (DataRow row in item.Rows)
             {
@@ -94,11 +94,11 @@ namespace Warehouse_Program
         // The Oke button click event.
         private void Oke_Click(object sender, RoutedEventArgs e)
         {
-            UpdateDB updateDB = new UpdateDB(); // Makes a new UpdateDB object.
+            DBActions actions = new DBActions();
             
             if (TB_Aantal.Text != "")
             {
-                updateDB.UpdateDataB(itemNaam, itemAantal, itemPartnummer, selectedName);   // Updates the database with the values given.
+                actions.ActionUpdateDataB(itemNaam, itemAantal, itemPartnummer, selectedName);   // Updates the database with the values given.
 
             }
             else
@@ -120,8 +120,8 @@ namespace Warehouse_Program
             // If the result is yes. We Delete the selected item. And show a message.
             if (result == MessageBoxResult.Yes)
             {
-                DB_Delete_Item del = new DB_Delete_Item();
-                del.DeleteItem(selectedName);
+                DBActions actions = new DBActions();
+                actions.ActionDeleteItem(selectedName);
                 MessageBox.Show($"{selectedName} is verwijdert!");
             }
             else if (result == MessageBoxResult.No)

@@ -68,11 +68,11 @@ namespace Warehouse_Program
 
         private void Commit_Button_Click(object sender, RoutedEventArgs e)
         {
-            InsertItems insert = new InsertItems();
+            DBActions actions = new DBActions();
 
             try
             {
-                insert.InsertItemsDB(itemName, itemAmount, partNumber);
+                actions.ActionInsertItemsDB(itemName, itemAmount, partNumber);
                 MessageBox.Show("Items toegevoegd aan de database.", "Melding");
             }
             catch (Exception ex)

@@ -81,18 +81,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DB_Delete_Item.cs" />
+    <Compile Include="DBActions.cs" />
     <Compile Include="Export.cs" />
     <Compile Include="IncommingWindow.xaml.cs">
       <DependentUpon>IncommingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InsertItems.cs" />
     <Compile Include="Goederen.xaml.cs">
       <DependentUpon>Goederen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShowStock.cs" />
-    <Compile Include="UpdateDB.cs" />
-    <Compile Include="UpdateGoederen.cs" />
     <Compile Include="UpdateWindow.xaml.cs">
       <DependentUpon>UpdateWindow.xaml</DependentUpon>
     </Compile>

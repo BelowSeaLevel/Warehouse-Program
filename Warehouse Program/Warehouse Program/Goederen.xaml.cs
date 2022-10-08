@@ -41,10 +41,10 @@ namespace Warehouse_Program
             SplitArray();
             
             
-            UpdateGoederen updateGoederen = new UpdateGoederen();
+            DBActions actions = new DBActions();
             foreach(var item in finalAmounts)
             {
-                updateGoederen.DecreaseDB(item.Key, item.Value);
+                actions.ActionDecreaseDB(item.Key, item.Value);
             }
 
             Scanned_Text.Document.Blocks.Clear();
@@ -62,10 +62,10 @@ namespace Warehouse_Program
 
             // Update the Database "Aantal" Column based on the amount of times
             // a word has been scanned.
-            UpdateGoederen updateGoederen = new UpdateGoederen();
+            DBActions actions = new DBActions();
             foreach (var item in finalAmounts)
             {
-                updateGoederen.IncreaseDB(item.Key, item.Value);
+                actions.ActionIncreaseDB(item.Key, item.Value);
             }
 
             Scanned_Text.Document.Blocks.Clear();

@@ -13,9 +13,9 @@ namespace Warehouse_Program
     {
         public void Exporting()
         {
-            //DataTable dataTable = new DataTable();  // Create a datatable to hold database data.
-            ShowStock showStock = new ShowStock();  // Makes a new ShowStock Class.
-            DataTable dataTable = showStock.GetAllItems();    // Fill the dataTable with the database data.
+            
+            DBActions actions = new DBActions();
+            DataTable dataTable = actions.ActionGetAllItems();    // Fill the dataTable with the database data.
 
             // Below we use the SaveFileDialog to open a dialogwindow,
             // where we can save the file in the correct place.

@@ -51,8 +51,8 @@ namespace Warehouse_Program
         // Resets the weekly difference in Received and Issued items.
         private void Reset_W_Verschil(object sender, RoutedEventArgs e)
         {
-            UpdateDB updateDB = new UpdateDB();
-            updateDB.ResetWeekly();
+            DBActions actions = new DBActions();
+            actions.ActionResetWeekly();
             Label_Reminder.Visibility = Visibility.Collapsed;
             System.Windows.MessageBox.Show("Week aantallen zijn ge-reset!", "Melding");
         }
@@ -83,9 +83,9 @@ namespace Warehouse_Program
         /// </summary>
         private void BTStock_Click(object sender, RoutedEventArgs e)
         {
-            ShowStock peek = new ShowStock();         // Makes a new ShowStock class.
-            DataTable reading = peek.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
-            DataWindow.ItemsSource = reading.DefaultView;   // Default view gets the data in the database.
+            DBActions action = new DBActions();
+            DataTable reading = action.ActionGetAllItems();
+            DataWindow.ItemsSource = reading.DefaultView;   
 
         }
 
