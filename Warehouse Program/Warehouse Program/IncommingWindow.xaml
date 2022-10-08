@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warehouse_Program"
         mc:Ignorable="d"
-        Title="Inkomenden Goederen" Height="317" Width="270" ResizeMode="NoResize">
+        Title="Inkomenden Goederen" Height="317" Width="304" ResizeMode="NoResize">
     <Grid Margin="0,0,0,1">
         <Grid Background="#FF88B1BA" Margin="0,0,0,227">
             <Label Content="Inkomende Goederen" FontFamily="Arial" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
         </Grid>
-        <TextBox x:Name="Name_Textbox" HorizontalAlignment="Left" Margin="90,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Name_Textbox_TextChanged"/>
-        <TextBox x:Name="Amount_Textbox" HorizontalAlignment="Left" Margin="90,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Amount_Textbox_TextChanged"/>
+        <TextBox x:Name="Name_Textbox" HorizontalAlignment="Left" Margin="90,99,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" TextChanged="Name_Textbox_TextChanged" TabIndex="1" UseLayoutRounding="False" VerticalScrollBarVisibility="Hidden" Panel.ZIndex="3" Height="20"/>
+        <TextBox x:Name="Amount_Textbox" HorizontalAlignment="Left" Margin="90,136,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" TextChanged="Amount_Textbox_TextChanged" TabIndex="2" Panel.ZIndex="2" Height="20"/>
         <Label x:Name="Name_Label" Content="Naam:" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Amount_Label" Content="Aantal:" HorizontalAlignment="Left" Margin="39,132,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Commit_Button" Content="Oke" HorizontalAlignment="Left" Margin="88,215,0,0" VerticalAlignment="Top" Height="53" Width="108" FontSize="22" Click="Commit_Button_Click"/>
+        <Button x:Name="Commit_Button" Content="Ok" HorizontalAlignment="Center" Margin="0,219,0,0" VerticalAlignment="Top" Height="53" Width="108" FontSize="22" Click="Commit_Button_Click" TabIndex="4"/>
         <Label Content="Part Nummer:" HorizontalAlignment="Left" Margin="7,163,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="PN_Textbox" HorizontalAlignment="Left" Margin="90,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="PN_Textbox_TextChanged"/>
+        <TextBox x:Name="PN_Textbox" HorizontalAlignment="Left" Margin="90,167,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="160" TextChanged="PN_Textbox_TextChanged" TabIndex="3" Panel.ZIndex="1" Height="23"/>
 
     </Grid>
 </Window>

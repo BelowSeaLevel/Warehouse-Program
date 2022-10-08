@@ -21,7 +21,7 @@ namespace Warehouse_Program
     {
         readonly string[] seperators = { "\r", "\n" };
         string[] scanned;
-        List<string> ItemsToList = new List<string>();
+        Dictionary<string, int> finalAmounts = new Dictionary<string, int>();
 
         public GoederenWindow()
         {
@@ -36,34 +36,69 @@ namespace Warehouse_Program
 
         private void B_Min_Click(object sender, RoutedEventArgs e)
         {
-            // Makes an array filled with all words in the Scanned_Text Document.
-            // And splits it based on the seperators array.
-            scanned = new TextRange(Scanned_Text.Document.ContentStart, Scanned_Text.Document.ContentEnd).Text.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
+            finalAmounts.Clear();
 
-            // Put each word from the scanned array into a list.
-            foreach (string word in scanned)
+            SplitArray();
+            
+            
+            DBActions actions = new DBActions();
+            foreach(var item in finalAmounts)
             {
-                ItemsToList.Add(word);
+                actions.ActionDecreaseDB(item.Key, item.Value);
             }
 
-            // Below we need to update the database, by removing that amount of times an item,
-            // is scanned into the Scanned_Text Document.
-
-            // We need to find the duplicates of a name, and count how many times that duplicate
-            // is present.
-            var duplicates = ItemsToList.GroupBy(x => x)
-                   .Where(g => g.Count() > 1)
-                   .Select(y => new { Name = y.Key, Count = y.Count() })
-                   .ToList();
-
-
-            var joined = string.Join(Environment.NewLine, ItemsToList.ToArray());
-
-            //MessageBox.Show();
+            Scanned_Text.Document.Blocks.Clear();
         }
 
         private void B_Plus_Click(object sender, RoutedEventArgs e)
         {
+            // Clears the Dictionary, otherwise counts would stack.
+            // And you would get a wrong amount updated.
+            finalAmounts.Clear();
+
+
+            SplitArray();
+
+
+            // Update the Database "Aantal" Column based on the amount of times
+            // a word has been scanned.
+            DBActions actions = new DBActions();
+            foreach (var item in finalAmounts)
+            {
+                actions.ActionIncreaseDB(item.Key, item.Value);
+            }
+
+            Scanned_Text.Document.Blocks.Clear();
+        }
+
+
+        // Splits the array in only the words we need, so we can update the Datebase.
+        private void SplitArray()
+        {
+            int count;
+            // Makes an array filled with all words in the Scanned_Text Document.
+            // And splits it based on the seperators array.
+            scanned = new TextRange(Scanned_Text.Document.ContentStart, Scanned_Text.Document.ContentEnd).Text.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
+
+            
+
+            // Foreach item in scanned, we check or it is already in finalAmounts,
+            // If it is, we do it's value + 1.
+            // If it is not yet in finalAmounts, we add it as new with count being 1.
+            foreach (string item in scanned)
+            {
+                if(finalAmounts.ContainsKey(item))
+                {
+                    count = finalAmounts[item];
+                    count++;
+                    finalAmounts[item] = count;
+                }
+                else if (!finalAmounts.ContainsKey(item))
+                { 
+                    count = 1;
+                    finalAmounts.Add(item, count);
+                }
+            }
 
         }
     }

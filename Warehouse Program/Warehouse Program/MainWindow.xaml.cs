@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Warehouse_Program
 {
@@ -24,13 +13,53 @@ namespace Warehouse_Program
         public MainWindow()
         {
             InitializeComponent();
+
+
+            Label_Reminder.Visibility = Visibility.Collapsed;
+
+
+            MondayCheck();
+        }
+
+        // Checks wether it is Monday between 7:00 & 8:00
+        private void MondayCheck()
+        {
+
+            DateTime today = DateTime.Now;
+
+
+            if (today.DayOfWeek == DayOfWeek.Monday && today.Hour >= 7 && today.Hour <= 8)
+            {
+                Label_Reminder.Visibility= Visibility.Visible;
+            }
+           
         }
 
 
         /// <summary>
-        /// For all incomming items.
-        /// This means the items will be increased in count.
-        /// as this is new items comming into the warehouse.
+        /// Exports Database to a Excel document.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Export_Click(object sender, RoutedEventArgs e)
+        {
+            Export export = new Export();
+            export.Exporting();
+
+        }
+
+        // Resets the weekly difference in Received and Issued items.
+        private void Reset_W_Verschil(object sender, RoutedEventArgs e)
+        {
+            DBActions actions = new DBActions();
+            actions.ActionResetWeekly();
+            Label_Reminder.Visibility = Visibility.Collapsed;
+            System.Windows.MessageBox.Show("Week aantallen zijn ge-reset!", "Melding");
+        }
+
+
+        /// <summary>
+        /// Makes a new Window, where you can input new items into your stock.
         /// </summary>
         private void BTIncomming_Click(object sender, RoutedEventArgs e)
         {
@@ -41,9 +70,7 @@ namespace Warehouse_Program
 
 
         /// <summary>
-        /// For all outgoing Items.
-        /// This means items are going out of the warehouse
-        /// to the customers.
+        /// Makes a new Window, where you can increase or decrease the items amount you have.
         /// </summary>
         private void BTGoederen_Click(object sender, RoutedEventArgs e)
         {
@@ -54,17 +81,17 @@ namespace Warehouse_Program
         /// <summary>
         /// Gets the data from the database, and shows them in a DataWindow.
         /// </summary>
-        private void ShowStock_Click(object sender, RoutedEventArgs e)
+        private void BTStock_Click(object sender, RoutedEventArgs e)
         {
-            ShowStock peek = new ShowStock();         // Makes a new ShowStock class.
-            DataTable reading = peek.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
-            DataWindow.ItemsSource = reading.DefaultView;   // Default view gets the data in the database.
+            DBActions action = new DBActions();
+            DataTable reading = action.ActionGetAllItems();
+            DataWindow.ItemsSource = reading.DefaultView;   
 
         }
 
 
         /// <summary>
-        /// Update's the database, incase your database does not match the physical stock.
+        /// Makes a new Window, where you can Update your stock.
         /// </summary>
         private void BTUpdate_Click(object sender, RoutedEventArgs e)
         {
@@ -72,5 +99,53 @@ namespace Warehouse_Program
             window.Show();
             
         }
+
+
+        #region ButtonEnter And Leave
+        private void BTUpdateEnter(object sender, RoutedEventArgs e)
+        {
+            BTUpdate.FontSize = 40;
+        }
+
+        
+        private void BTUpdateLeave(object sender, RoutedEventArgs e)
+        {
+            BTUpdate.FontSize = 30;
+        }
+
+        private void BTGoederenEnter(object sender, RoutedEventArgs e)
+        {
+            BTGoederen.FontSize = 37;
+        }
+
+
+        private void BTGoederenLeave(object sender, RoutedEventArgs e)
+        {
+            BTGoederen.FontSize = 30;
+        }
+
+        private void BTInkomendEnter(object sender, RoutedEventArgs e)
+        {
+            BTIncomming.FontSize = 27;
+        }
+
+
+        private void BTInkomendLeave(object sender, RoutedEventArgs e)
+        {
+            BTIncomming.FontSize = 23;
+        }
+
+        private void BTStockEnter(object sender, RoutedEventArgs e)
+        {
+            BTStock.FontSize = 38;
+        }
+
+
+        private void BTStockLeave(object sender, RoutedEventArgs e)
+        {
+            BTStock.FontSize = 30;
+        }
+
+        #endregion
     }
 }
