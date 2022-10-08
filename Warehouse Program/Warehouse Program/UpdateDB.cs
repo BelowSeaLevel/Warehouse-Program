@@ -53,7 +53,9 @@ namespace Warehouse_Program
         }
 
 
-
+        /// <summary>
+        /// Resets the weekly difference.
+        /// </summary>
         internal void ResetWeekly()
         {
             try
