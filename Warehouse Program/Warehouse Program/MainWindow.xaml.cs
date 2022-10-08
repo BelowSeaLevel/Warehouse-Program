@@ -1,21 +1,7 @@
-﻿using ClosedXML.Excel;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Warehouse_Program
 {
@@ -57,39 +43,16 @@ namespace Warehouse_Program
         /// <param name="e"></param>
         private void Export_Click(object sender, RoutedEventArgs e)
         {
-            //DataTable dataTable = new DataTable();  // Create a datatable to hold database data.
-            ShowStock showStock = new ShowStock();  // Makes a new ShowStock Class.
-            DataTable dataTable = showStock.GetAllItems();    // Fill the dataTable with the database data.
-
-            // Below we use the SaveFileDialog to open a dialogwindow,
-            // where we can save the file in the correct place.
-            using(SaveFileDialog sfd = new SaveFileDialog() { Filter="Excel Workbook|*.xlsx" } )
-            {
-                if(sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    try
-                    {
-                        using (XLWorkbook book = new XLWorkbook()) // Try to make a new workbook and save it.
-                        {
-                            book.AddWorksheet(dataTable, "Stocklijst");
-                            book.SaveAs(sfd.FileName);
-                        }
-                        System.Windows.MessageBox.Show("Export succes.");
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Windows.MessageBox.Show("Message: " + ex.Message);
-                    }
-                }
-            }
+            Export export = new Export();
+            export.Exporting();
 
         }
 
         // Resets the weekly difference in Received and Issued items.
         private void Reset_W_Verschil(object sender, RoutedEventArgs e)
         {
-            UpdateDB updateDB = new UpdateDB();
-            updateDB.ResetWeekly();
+            DBActions actions = new DBActions();
+            actions.ActionResetWeekly();
             Label_Reminder.Visibility = Visibility.Collapsed;
             System.Windows.MessageBox.Show("Week aantallen zijn ge-reset!", "Melding");
         }
@@ -118,11 +81,11 @@ namespace Warehouse_Program
         /// <summary>
         /// Gets the data from the database, and shows them in a DataWindow.
         /// </summary>
-        private void ShowStock_Click(object sender, RoutedEventArgs e)
+        private void BTStock_Click(object sender, RoutedEventArgs e)
         {
-            ShowStock peek = new ShowStock();         // Makes a new ShowStock class.
-            DataTable reading = peek.GetAllItems();     // Get all data from the ShowStock class, through the GetAllItems Method.
-            DataWindow.ItemsSource = reading.DefaultView;   // Default view gets the data in the database.
+            DBActions action = new DBActions();
+            DataTable reading = action.ActionGetAllItems();
+            DataWindow.ItemsSource = reading.DefaultView;   
 
         }
 
@@ -136,5 +99,53 @@ namespace Warehouse_Program
             window.Show();
             
         }
+
+
+        #region ButtonEnter And Leave
+        private void BTUpdateEnter(object sender, RoutedEventArgs e)
+        {
+            BTUpdate.FontSize = 40;
+        }
+
+        
+        private void BTUpdateLeave(object sender, RoutedEventArgs e)
+        {
+            BTUpdate.FontSize = 30;
+        }
+
+        private void BTGoederenEnter(object sender, RoutedEventArgs e)
+        {
+            BTGoederen.FontSize = 37;
+        }
+
+
+        private void BTGoederenLeave(object sender, RoutedEventArgs e)
+        {
+            BTGoederen.FontSize = 30;
+        }
+
+        private void BTInkomendEnter(object sender, RoutedEventArgs e)
+        {
+            BTIncomming.FontSize = 27;
+        }
+
+
+        private void BTInkomendLeave(object sender, RoutedEventArgs e)
+        {
+            BTIncomming.FontSize = 23;
+        }
+
+        private void BTStockEnter(object sender, RoutedEventArgs e)
+        {
+            BTStock.FontSize = 38;
+        }
+
+
+        private void BTStockLeave(object sender, RoutedEventArgs e)
+        {
+            BTStock.FontSize = 30;
+        }
+
+        #endregion
     }
 }
